@@ -25,6 +25,100 @@
 		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
 	</head>
+	<script>
+        window.onload = function () {
+            // Variables
+            const IMAGENES = [
+				'/imagescarrousel/IA.jpg',
+                '/imagescarrousel/cloud_computing.jpg',
+				'/imagescarrousel/curso_informatica_1.jpg',
+				'/imagescarrousel/miniatura-1.jpg',
+                
+            ];
+            const TIEMPO_INTERVALO_MILESIMAS_SEG = 1000;
+            let posicionActual = 0;
+            let $botonRetroceder = document.querySelector('#retroceder');
+            let $botonAvanzar = document.querySelector('#avanzar');
+            let $imagen = document.querySelector('#imagen');
+            let $botonPlay = document.querySelector('#play');
+            let $botonStop = document.querySelector('#stop');
+            let intervalo;
+
+			
+
+			//////COLOR botones/////
+			$botonPlay.style.backgroundColor = 'yellow';
+			$botonStop.style.backgroundColor = 'yellow';
+			$botonAvanzar.style.backgroundColor = 'yellow';
+			$botonRetroceder.style.backgroundColor = 'yellow';
+		
+            // Funciones
+
+            /**
+             * Funcion que cambia la foto en la siguiente posicion
+             */
+            function pasarFoto() {
+                if(posicionActual >= IMAGENES.length - 1) {
+                    posicionActual = 0;
+                } else {
+                    posicionActual++;
+                }
+                renderizarImagen();
+            }
+
+            /**
+             * Funcion que cambia la foto en la anterior posicion
+             */
+            function retrocederFoto() {
+                if(posicionActual <= 0) {
+                    posicionActual = IMAGENES.length - 1;
+                } else {
+                    posicionActual--;
+                }
+                renderizarImagen();
+            }
+
+            /**
+             * Funcion que actualiza la imagen de imagen dependiendo de posicionActual
+             */
+            function renderizarImagen () {
+                $imagen.style.backgroundImage = `url(${IMAGENES[posicionActual]})`;
+            }
+
+            /**
+             * Activa el autoplay de la imagen
+             */
+            function playIntervalo() {
+                intervalo = setInterval(pasarFoto, TIEMPO_INTERVALO_MILESIMAS_SEG);
+                // Desactivamos los botones de control
+                $botonAvanzar.setAttribute('disabled', true);
+                $botonRetroceder.setAttribute('disabled', true);
+                $botonPlay.setAttribute('disabled', true);
+                $botonStop.removeAttribute('disabled');
+
+            }
+
+            /**
+             * Para el autoplay de la imagen
+             */
+            function stopIntervalo() {
+                clearInterval(intervalo);
+                // Activamos los botones de control
+                $botonAvanzar.removeAttribute('disabled');
+                $botonRetroceder.removeAttribute('disabled');
+                $botonPlay.removeAttribute('disabled');
+                $botonStop.setAttribute('disabled', true);
+            }
+
+            // Eventos
+            $botonAvanzar.addEventListener('click', pasarFoto);
+            $botonRetroceder.addEventListener('click', retrocederFoto);
+            $botonPlay.addEventListener('click', playIntervalo);
+            $botonStop.addEventListener('click', stopIntervalo);
+            // Iniciar
+            renderizarImagen();
+        } 
+    </script>
 	<body id="page-top">
 		<!-- Navigation -->
 		<nav class="navbar navbar-default navbar-fixed-top">
@@ -64,7 +158,7 @@
 			<!-- /.container-fluid -->
 		</nav>
 		<!-- Header -->
-		<header>
+		<header id=" header">
 			<div class="container">
 				<div class="slider-container">
 					<div class="intro-text">
@@ -198,6 +292,19 @@
 				</div>
 			</div>
 		</section>
+		
+		<!-- CARRUSEL DE IMAGENES -->
+		<div class="carousel">
+			<button id="retroceder">Retroceder</button>
+			<div id="imagen"></div>
+			<button id="avanzar">Avanzar</button>
+		</div>
+		<div class="controles">
+			<button id="play">Play</button>
+			<button id="stop" disabled>Stop</button>
+		</div>
+		
+
 		<section class="overlay-dark bg-img1 dark-bg short-section">
 			<div class="container text-center">
 				<div class="row">
