@@ -29,13 +29,13 @@
         window.onload = function () {
             // Variables
             const IMAGENES = [
-				'/imagescarrousel/IA.jpg',
-                '/imagescarrousel/cloud_computing.jpg',
-				'/imagescarrousel/curso_informatica_1.jpg',
+				'./images/progra.jpg',
+                '/images/programacion-web.jpg',
+				'/images/imagen progra.jpg',
 				'/imagescarrousel/miniatura-1.jpg',
                 
             ];
-            const TIEMPO_INTERVALO_MILESIMAS_SEG = 1000;
+            const TIEMPO_INTERVALO_MILESIMAS_SEG = 3000;
             let posicionActual = 0;
             let $botonRetroceder = document.querySelector('#retroceder');
             let $botonAvanzar = document.querySelector('#avanzar');
@@ -44,13 +44,29 @@
             let $botonStop = document.querySelector('#stop');
             let intervalo;
 
-			
+			const botones = document.querySelectorAll('.boton-grande');
 
-			//////COLOR botones/////
-			$botonPlay.style.backgroundColor = 'yellow';
-			$botonStop.style.backgroundColor = 'yellow';
-			$botonAvanzar.style.backgroundColor = 'yellow';
-			$botonRetroceder.style.backgroundColor = 'yellow';
+
+			// Botón Play
+$botonPlay.style.backgroundColor = 'grey';
+$botonPlay.style.borderRadius = '10px'; // Bordes redondeados
+$botonPlay.style.padding = '20px 30px'; // Relleno
+$botonPlay.style.outline = 'none'; // Elimina el contorno al enfocar
+$botonPlay.style.margin = '0 auto'; // Centrado
+
+// Botón Stop
+$botonStop.style.backgroundColor = 'grey';
+$botonStop.style.borderRadius = '10px'; // Bordes redondeados
+$botonStop.style.padding = '20px 30px'; // Relleno
+$botonStop.style.outline = 'none'; // Elimina el contorno al enfocar
+$botonStop.style.margin = '0 auto'; // Centrado
+//boton avanzar
+$botonAvanzar.style.backgroundColor = 'grey';
+//boton retroceder
+$botonRetroceder.style.backgroundColor = 'grey';
+
+		
+			
 		
             // Funciones
 
@@ -61,7 +77,7 @@
                 if(posicionActual >= IMAGENES.length - 1) {
                     posicionActual = 0;
                 } else {
-                    posicionActual++;
+                    posicionActual++
                 }
                 renderizarImagen();
             }
@@ -293,16 +309,6 @@
 			</div>
 		</section>
 		
-		<!-- CARRUSEL DE IMAGENES -->
-		<div class="carousel">
-			<button id="retroceder">Retroceder</button>
-			<div id="imagen"></div>
-			<button id="avanzar">Avanzar</button>
-		</div>
-		<div class="controles">
-			<button id="play">Play</button>
-			<button id="stop" disabled>Stop</button>
-		</div>
 		
 
 		<section class="overlay-dark bg-img1 dark-bg short-section">
@@ -327,7 +333,7 @@
 			</div>
 			<div class="row">
 				<!-- start portfolio item -->
-				<div class="col-md-4">
+				<div class="col-md-12">
 					<div class="ot-portfolio-item">
 						<figure class="effect-bubba">
 							<img src="images/joyeria.png" alt="img02" class="img-responsive" />
@@ -357,26 +363,21 @@
 					<div class="col-lg-12 text-center">
 						<div class="owl-carousel">
 							<div class="item">
-								<div class="partner-logo"><img src="images/demo/partners-1.png" alt="partners"></div>
+								<div class="partner-logo"><img src="images/demo/java.png" alt="partners"></div>
 							</div>
 							<div class="item">
-								<div class="partner-logo"><img src="images/demo/partners-2.png" alt="partners"></div>
+								<div class="partner-logo"><img src="images/demo/Spring-Logo.webp" alt="partners"></div>
 							</div>
 							<div class="item">
-								<div class="partner-logo"><img src="images/demo/partners-3.png" alt="partners"></div>
+								<div class="partner-logo"><img src="images/demo/springboot.png" alt="partners"></div>
 							</div>
 							<div class="item">
-								<div class="partner-logo"><img src="images/demo/partners-4.png" alt="partners"></div>
+								<div class="partner-logo"><img src="images/demo/react-native-1.png" alt="partners"></div>
 							</div>
 							<div class="item">
-								<div class="partner-logo"><img src="images/demo/partners-5.png" alt="partners"></div>
+								<div class="partner-logo"><img src="images/demo/Junit.png" alt="partners"></div>
 							</div>
-							<div class="item">
-								<div class="partner-logo"><img src="images/demo/partners-6.png" alt="partners"></div>
-							</div>
-							<div class="item">
-								<div class="partner-logo"><img src="images/demo/partners-7.png" alt="partners"></div>
-							</div>
+							
 						</div>
 					</div>
 				</div>
@@ -466,25 +467,7 @@
 		
 
 		
-		<!-- Modal for portfolio item 3 -->
-		<div class="modal fade" id="Modal-3" tabindex="-1" role="dialog" aria-labelledby="Modal-label-3">
-			<div class="modal-dialog" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title" id="Modal-label-3">Lamp & Velvet</h4>
-					</div>
-					<div class="modal-body">
-						<img src="images/demo/portfolio-3.jpg" alt="img01" class="img-responsive" />
-						<div class="modal-works"><span>Branding</span><span>Web Design</span></div>
-						<p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe</p>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-					</div>
-				</div>
-			</div>
-		</div>
+	
 
 		<!-- Modal for portfolio item 4 -->
 		<div class="modal fade" id="Modal-4" tabindex="-1" role="dialog" aria-labelledby="Modal-label-4">
@@ -492,11 +475,11 @@
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title" id="Modal-label-4">Smart Name</h4>
+						<h4 class="modal-title" id="Modal-label-4">Dream Jewels</h4>
 					</div>
 					<div class="modal-body">
 						<img src="images/joyeria.png" alt="img01" class="img-responsive" />
-						<div class="modal-works"><span>Branding</span><span>Web Design</span></div>
+						<div class="modal-works"><span>Web Design</span></div>
 						<p>Tienda virtual de una joyería</p>
 					</div>
 					<div class="modal-footer">
@@ -506,25 +489,7 @@
 			</div>
 		</div>
 
-		<!-- Modal for portfolio item 5 -->
-		<div class="modal fade" id="Modal-5" tabindex="-1" role="dialog" aria-labelledby="Modal-label-5">
-			<div class="modal-dialog" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title" id="Modal-label-5">Fast People</h4>
-					</div>
-					<div class="modal-body">
-						<img src="images/demo/portfolio-5.jpg" alt="img01" class="img-responsive" />
-						<div class="modal-works"><span>Branding</span><span>Web Design</span></div>
-						<p>Lista de empleados</p>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-					</div>
-				</div>
-			</div>
-		</div>
+
 
 		<!-- Bootstrap core JavaScript
 			================================================== -->
