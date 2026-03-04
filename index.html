@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Carta para mi amiga</title>
+
+<style>
+
+body{
+margin:0;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+font-family:Georgia, serif;
+overflow:hidden;
+}
+
+.carta{
+background:white;
+width:520px;
+max-height:85vh;
+overflow-y:auto;
+padding:40px;
+border-radius:20px;
+box-shadow:0 20px 40px rgba(0,0,0,0.2);
+text-align:center;
+z-index:5;
+}
+
+h1{
+color:#ff4d88;
+margin-bottom:20px;
+font-size:28px;
+}
+#texto{
+font-size:18px;
+line-height:1.7;
+text-align:left;
+white-space:pre-line;
+
+opacity:0;
+animation:aparecerTexto 2s ease forwards;
+animation-delay:1s;
+}
+
+@keyframes aparecerTexto{
+
+0%{
+opacity:0;
+transform:translateY(20px);
+}
+
+100%{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+/* FOTO */
+
+.foto{
+width:200px;
+border-radius:15px;
+margin-bottom:15px;
+box-shadow:0 10px 20px rgba(0,0,0,0.2);
+}
+.carrusel{
+position:relative;
+width:100%;
+max-width:480px;
+height:320px;
+margin:auto;
+margin-bottom:25px;
+overflow:hidden;
+border-radius:15px;
+box-shadow:0 8px 20px rgba(0,0,0,0.2);
+background:white;
+}
+
+.carrusel .foto{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+object-fit:contain;
+opacity:0;
+transition:opacity 1.2s ease;
+}
+
+.carrusel .foto.activa{
+opacity:1;
+}
+
+/* BOTON */
+
+button{
+background:#ff4d88;
+border:none;
+color:white;
+padding:12px 25px;
+border-radius:30px;
+font-size:16px;
+cursor:pointer;
+}
+
+button:hover{
+background:#e63e76;
+}
+
+/* CORAZONES */
+
+.corazon{
+position:absolute;
+color:#ff4d88;
+font-size:20px;
+animation:flotar 8s linear infinite;
+}
+
+/* FLORES */
+
+.flor{
+position:absolute;
+font-size:22px;
+animation:flotar 10s linear infinite;
+}
+
+/* ESTRELLAS */
+
+.estrella{
+position:absolute;
+color:white;
+font-size:14px;
+animation:brillar 2s infinite alternate;
+}
+
+/* ANIMACIONES */
+
+@keyframes flotar{
+
+0%{
+transform:translateY(100vh);
+opacity:0;
+}
+
+50%{
+opacity:1;
+}
+
+100%{
+transform:translateY(-10vh);
+opacity:0;
+}
+
+}
+
+@keyframes brillar{
+
+0%{
+opacity:0.2;
+transform:scale(0.8);
+}
+
+100%{
+opacity:1;
+transform:scale(1.2);
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="carta">
+
+
+
+<h1>Para mi Tere bonita 💖</h1>
+
+<p id="texto">
+Estoy tan feliz de este comienzo en tu vida, mi corazón está tan feliz de verte llena de tanta alegría, emoción, un poco de miedo y nervios por este nuevo comienzo, pero con esa sonrisa y esa valentía que tanto admiro de ti siempre, que sé que cualquier adversidad que se ponga en el camino la afrontarás de la mejor manera 
+
+Deseo que en esta etapa te permitas vivir y disfrutar cada una de las cosas que acontezcan, que tu corazón se llene de nuevas experiencias, que encuentres nuevas personas que te amen tanto como los que te conocemos lo hacemos, que tengas muchas nuevas oportunidades, que vean lo trabajadora y talentosa que eres, que las puertas estén abiertas frente a ti y no temas en cruzarlas. 
+Espero que aprendas muchísimo en este camino, y también espero que aunque sientas miedo o soledad sepas que todo saldrá muy bien y quienes te aman te envían todo su amor y fuerza para cuando más lo necesites 
+
+Por mi parte te extrañaré muchísimo y mis lágrimas salen de mis ojos al saber que vas a estar lejos, pero no hay nada que consuele más mi corazón que imaginarte cumpliendo tus sueños, verte con esa sonrisa y ese entusiasmo por lo que te tiene la vida preparado vale más que cualquier atisbo de tristeza que quiera pasar por mi mente
+
+Quienes te amamos estaremos acompañándote a la distancia en esta nueva etapa. Disfrútala muchísimo bebé, te mando abrazos y besos siempre y cuando necesites hablar o algo ni si quiera veas el reloj para saber qué hora es, solo escríbeme o llámame ok? 
+Desearía estar a tu lado en este capítulo de tu historia bb, pero también estoy muy feliz de admirarte desde aquí 
+
+Y ya sé que no te vas por un eternidad, pero luego me pongo a pensar que te puedes quedar a vivir allá y poner un restaurante muy exitoso y que se te pegue el acento español JAJAJJAJA y me da sentimiento pues
+Pero bueno, volviendo al tema, aunque sea solo por un tiempo me da mucho alegría, emoción y miedo a mi también y por eso quería escribirte esto, te amo y siempre estoy aquí para ti, sé que todo va a salir excelente y que vas a venir con muchas historias nuevas que contar te amo inmensamente, y mi corazón siempre va con el tuyo❤️ 
+
+Posdataaa: 
+Quiero saber absolutamente todo, así que, por favor vuélvete tiktoker si? Jajaja;
+</p>
+
+<br>
+<div class="carrusel">
+
+<img src="foto1.jpeg" class="foto activa">
+<img src="foto2.jpeg" class="foto">
+<img src="foto3.jpeg" class="foto">
+<img src="foto4.jpeg" class="foto">
+<img src="foto5.jpeg" class="foto">
+<img src="foto6.jpeg" class="foto">
+<img src="foto7.jpeg" class="foto">
+<img src="foto8.jpeg" class="foto">
+<img src="foto9.jpeg" class="foto">
+<img src="foto10.jpeg" class="foto">
+<img src="foto11.jpeg" class="foto">
+
+</div>
+
+<button onclick="toggleMusic()">🎵 Reproducir música</button>
+
+<audio id="musica">
+<source src="tanto.mp3" type="audio/mpeg">
+</audio>
+
+</div>
+
+<script>
+
+
+/* MUSICA */
+
+function toggleMusic(){
+
+const audio=document.getElementById("musica");
+
+if(audio.paused){
+audio.play();
+}else{
+audio.pause();
+}
+
+}
+
+/* CORAZONES */
+
+function crearCorazon(){
+
+const c=document.createElement("div");
+c.className="corazon";
+c.innerHTML="❤";
+
+c.style.left=Math.random()*100+"vw";
+c.style.fontSize=(Math.random()*20+15)+"px";
+c.style.animationDuration=(Math.random()*5+5)+"s";
+
+document.body.appendChild(c);
+
+setTimeout(()=>{c.remove()},8000);
+
+}
+
+setInterval(crearCorazon,700);
+
+/* FLORES */
+
+function crearFlor(){
+
+const f=document.createElement("div");
+f.className="flor";
+f.innerHTML="🌸";
+
+f.style.left=Math.random()*100+"vw";
+f.style.fontSize=(Math.random()*20+18)+"px";
+f.style.animationDuration=(Math.random()*6+6)+"s";
+
+document.body.appendChild(f);
+
+setTimeout(()=>{f.remove()},10000);
+
+}
+
+setInterval(crearFlor,1200);
+
+/* ESTRELLAS */
+
+function crearEstrella(){
+
+const e=document.createElement("div");
+e.className="estrella";
+e.innerHTML="✨";
+
+e.style.left=Math.random()*100+"vw";
+e.style.top=Math.random()*100+"vh";
+
+document.body.appendChild(e);
+
+setTimeout(()=>{e.remove()},4000);
+
+}
+
+setInterval(crearEstrella,300);
+
+/* CARRUSEL DE FOTOS */
+
+let index=0;
+const fotos=document.querySelectorAll(".carrusel .foto");
+
+function cambiarFoto(){
+
+fotos[index].classList.remove("activa");
+
+index=(index+1)%fotos.length;
+
+fotos[index].classList.add("activa");
+
+}
+
+setInterval(cambiarFoto,3000);
+</script>
+
+</body>
+</html>
